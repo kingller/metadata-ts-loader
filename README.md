@@ -56,6 +56,48 @@ export interface IButtonProps {
 }
 ```
 
+Will generate the following outpout:
+```javascript
+{
+	"metadataDocs": [{
+		"description": "Button properties.",
+		"displayName": "IButtonProps",
+		"methods": [],
+		"props": {
+			"value": {
+				"defaultValue": {
+					"value": "\" \""
+				},
+				"description": "Value to display, either empty (\" \") or \"X\" / \"O\".",
+				"name": "value",
+				"required": false,
+				"type": {
+					"name": "\" \" | \"X\" | \"O\""
+				}
+			},
+			"position": {
+				"defaultValue": null,
+				"description": "Cell position on game board.",
+				"name": "position",
+				"required": true,
+				"type": {
+					"name": "{ x: number; y: number; }"
+				}
+			},
+			"onClick": {
+				"defaultValue": null,
+				"description": "Called when an empty cell is clicked.",
+				"name": "onClick",
+				"required": false,
+				"type": {
+					"name": "(x: number, y: number) => void"
+				}
+			}
+		}
+	}]
+}
+```
+
 ### Export Names
 
 Typescript docgen information can not be
