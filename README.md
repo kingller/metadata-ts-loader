@@ -34,7 +34,7 @@ access them from `metadata.metadataDocs[0].props`
 
 `interface.ts`:
 
-```javascript
+```typescript
 /**
  * Button properties.
  */
@@ -56,8 +56,8 @@ export interface IButtonProps {
 }
 ```
 
-Will generate the following outpout:
-```javascript
+Will generate the following outpout: 
+```json
 {
 	"metadataDocs": [{
 		"description": "Button properties.",
@@ -104,7 +104,7 @@ Typescript docgen information can not be
 generated for module that are only exported as default. You can work around
 the issue by exporting the module using a named export.
 
-```javascript
+```typescript
 /**
  * TicTacToe game cell. Displays a modal when the visible is true,
  * otherwise hide.
