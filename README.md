@@ -19,6 +19,13 @@ var metadata = require('metadata-ts-loader!./some/my-component');
 metadata.metadataDocs[0] // { props, description, displayName }
 ```
 
+If you want to get an object mapped with displayName instead of array, you can set `mapping=true` as bellow
+```js
+var metadata = require('metadata-ts-loader?mapping=true!./some/my-component');
+
+metadata // { [displayName]: { props, description, displayName } }
+```
+
 ### Instruction
 
 The loader will parse out any jsDoc style from typescript comment blocks. You can

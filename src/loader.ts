@@ -10,7 +10,8 @@ import {
   withCustomConfig,
   withCompilerOptions,
   ParserOptions,
-  FileParser
+  FileParser,
+  ComponentDoc
 } from "./parser";
 import LoaderOptions from "./LoaderOptions";
 import validateOptions from "./validateOptions";
@@ -58,7 +59,15 @@ function processResource(
   // deterministic.
   context.cacheable(true);
 
-  const options: LoaderOptions = getOptions(context) || {};
+  let options: LoaderOptions = getOptions(context) || {};
+
+  let mapping = false;
+  if (typeof options.mapping === "boolean") {
+    mapping = options.mapping;
+    options = Object.assign({}, options);
+    delete options.mapping;
+  }
+  
   validateOptions(options);
 
   options.docgenCollectionName =
@@ -123,6 +132,15 @@ function processResource(
 
   // Return amended source code if there is docgen information available.
   if (metadataDocs.length) {
+    if (mapping) {
+      // Return object instead of array when mapping is true
+      let outputObject: { [name: string]: ComponentDoc } = {};
+      metadataDocs.forEach((doc) => {
+        outputObject[doc.displayName] = doc;
+      });
+      return outputObject;
+    }
+
     return {
       // filename: context.resourcePath,
       // source,
