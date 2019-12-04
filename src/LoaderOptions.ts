@@ -42,7 +42,7 @@ export default interface LoaderOptions {
    */
   setDisplayName?: boolean;
   /**
-   * Output object instead of array
+   * Output object mapped with displayName instead of array
    *
    * @default false
    */
