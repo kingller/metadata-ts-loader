@@ -6,5 +6,9 @@
 <font color=red><strong>删除</strong></font>
 
 
+# 1.2.0
+1. <font color=blue>增强</font> 支持`typescript 4.6.0`以上
+
+
 # 1.1.0
 1. <font color=blue>增强</font> 支持返回以`displayName`映射的对象，设置`mapping=true`

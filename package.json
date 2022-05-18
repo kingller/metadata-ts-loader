@@ -1,16 +1,16 @@
 {
   "name": "metadata-ts-loader",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Webpack loader to parse typescript metadata from source code.",
   "keywords": [
-    "metadata",
-    "typescript",
-    "ts",
-    "loader",
-    "webpack",
+    "definition",
     "docgen",
     "interface",
-    "definition"
+    "loader",
+    "metadata",
+    "ts",
+    "typescript",
+    "webpack"
   ],
   "homepage": "https://github.com/kingller/metadata-ts-loader",
   "bugs": "https://github.com/kingller/metadata-ts-loader/issues",
@@ -18,49 +18,42 @@
     "type": "git",
     "url": "https://github.com/kingller/metadata-ts-loader.git"
   },
+  "license": "MIT",
   "author": {
     "name": "Kingller Tang",
     "url": "https://github.com/kingller"
   },
-  "main": "dist/index.js",
-  "license": "MIT",
   "files": [
     "dist/*",
     "package.json",
     "README.md"
   ],
-  "precommit": [
-    "clean",
-    "build"
-  ],
+  "main": "dist/index.js",
   "scripts": {
-    "start": "tsc -p ./tsconfig.build.json -w",
     "build": "tsc -p ./tsconfig.build.json",
     "clean": "rimraf dist",
-    "test": "jest",
-    "lint": "tslint -p ./"
+    "lint": "tslint -p ./",
+    "start": "tsc -p ./tsconfig.build.json -w",
+    "test": "jest"
   },
   "dependencies": {
     "@webpack-contrib/schema-utils": "^1.0.0-beta.0",
     "loader-utils": "^1.2.3"
   },
-  "peerDependencies": {
-    "typescript": "*"
-  },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/plugin-transform-modules-commonjs": "^7.4.4",
-    "@babel/preset-typescript": "^7.1.0",
+    "@babel/core": "^7.17.12",
+    "@babel/plugin-transform-modules-commonjs": "^7.17.12",
+    "@babel/preset-typescript": "^7.17.12",
     "@types/jest": "^24.0.15",
     "@types/memory-fs": "^0.3.2",
     "@types/node": "^12.0.10",
-    "@types/react": "^16.8.23",
+    "@types/react": "^16.9.35",
     "@types/webpack": "^4.4.34",
     "jest": "^24.8.0",
     "memory-fs": "^0.4.1",
     "pre-commit": "^1.2.2",
     "prettier": "^1.17.1",
-    "react": "^16.8.6",
+    "react": "^16.13.1",
     "rimraf": "^2.6.3",
     "ts-loader": "^6.0.4",
     "tslint": "^5.18.0",
@@ -69,5 +62,15 @@
     "tslint-plugin-prettier": "^2.0.0",
     "typescript": "^3.5.2",
     "webpack": "^4.35.0"
-  }
+  },
+  "peerDependencies": {
+    "typescript": "*"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "precommit": [
+    "clean",
+    "build"
+  ]
 }
